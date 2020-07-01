@@ -21,6 +21,11 @@ class PokemonSearch extends Component<User, SearchState> {
     this.pokemonRef = React.createRef();
   }
 
+  onSearchClick=()=>{
+    const inputValue=this.pokemonRef.current.value;
+    fetch(`https://pokeapi.co/api/v2/pokemon/${inputValue}`)
+  }
+
   render() {
     const { name, numberOfPokemons } = this.props;
     return (
